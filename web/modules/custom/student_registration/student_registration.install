@@ -1,0 +1,113 @@
+<?php
+
+/**
+ * @file
+ * Student registration install file.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * {@inheritdoc}
+ */
+function student_registration_schema(): array {
+  $schema['students_data'] = [
+    'description' => 'Stores module data as key/value pairs per user.',
+    'fields' => [
+      'uid' => [
+        'description' => 'The {students}.uid this record affects.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'module' => [
+        'description' => 'Student Registration module.',
+        'type' => 'varchar_ascii',
+        'length' => DRUPAL_EXTENSION_NAME_MAX_LENGTH,
+        'not null' => TRUE,
+        'default' => 'Student Registration module',
+      ],
+      'name' => [
+        'description' => 'Students`s name.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'enrollment_number' => [
+        'description' => 'Enter Enrollment Number.',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'description' => 'Enter Email ID.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'phone' => [
+        'description' => 'Enter Enrollment Number.',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'dob' => [
+        'description' => 'Select DOB.',
+        'type' => 'varchar_ascii',
+        'length' => 11,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'sex' => [
+        'description' => 'Select Gender.',
+        'type' => 'varchar_ascii',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'average_mark' => [
+        'type' => 'float',
+        'description' => "Average mark",
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => [
+      'uid',
+      'module',
+      'name',
+    ],
+    'indexes' => [
+      'module' => [
+        'module',
+      ],
+      'name' => [
+        'name',
+      ],
+    ],
+  ];
+  return $schema;
+}
+
+/**
+ * {@inheritdoc}
+ */
+function student_registration_update_8001(&$sandbox) {
+
+}
+
+/**
+ * {@inheritdoc}
+ */
+function student_registration_update_8005(&$sandbox) {
+  $spec = [
+    'type' => 'float',
+    'unsigned' => TRUE,
+    'size' => 'normal',
+    'not null' => TRUE,
+    'default' => 0,
+  ];
+  $schema = Database::getConnection()->schema();
+  $schema->addField('students_data', 'average_mark', $spec);
+}

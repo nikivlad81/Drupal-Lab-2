@@ -1,0 +1,14 @@
+mymodule.pluginpage:
+  path: '/custom-plugin'
+  defaults:
+    _controller: '\Drupal\myplugin\Controller\MyPluginController::describeLatestNode'
+  requirements:
+    _permission: 'view content'
+
+myplugin.settings:
+  path: '/admin/config/myplugin'
+  defaults:
+    _form: '\Drupal\myplugin\Form\EditConfigForm'
+    _title: 'Settings for Config MyPlugin form.'
+  requirements:
+    _permission: 'administer site configuration'

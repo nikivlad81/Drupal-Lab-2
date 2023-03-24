@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * MyModule module file.
+ */
+
+use Drupal\node\Entity\Node;
+
+/**
+ * {@inheritdoc}
+ */
+function mytheme_preprocess_page(&$variables) {
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if ($route_name == 'view.view_media_images_.page_1') {
+    $variables['#attached']['library'][] = 'mytheme/custom';
+    $variables['#attached']['library'][] = 'mytheme/masonry';
+  }
+
+  if ($route_name == 'entity.node.canonical') {
+    $node_id = \Drupal::routeMatch()->getParameter('node')->id();
+    $node = Node::load($node_id);
+    if ($node->getType() == 'blog') {
+      $variables['#attached']['library'][] = 'mytheme/custom';
+      $variables['#attached']['library'][] = 'mytheme/masonry';
+    }
+  }
+
+}

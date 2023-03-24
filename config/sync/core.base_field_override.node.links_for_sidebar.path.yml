@@ -1,0 +1,20 @@
+uuid: 70568313-3f68-4cb9-8dbd-d0fe711bc387
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+  module:
+    - path
+id: node.links_for_sidebar.path
+field_name: path
+entity_type: node
+bundle: links_for_sidebar
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

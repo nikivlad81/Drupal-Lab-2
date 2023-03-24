@@ -1,0 +1,23 @@
+uuid: 5f3ff2d2-e5f1-4a14-8ec6-1a168075f725
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.links_for_sidebar
+  module:
+    - text
+id: node.links_for_sidebar.body
+field_name: body
+entity_type: node
+bundle: links_for_sidebar
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

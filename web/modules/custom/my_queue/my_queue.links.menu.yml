@@ -1,0 +1,5 @@
+my_queue.batch:
+  route_name: my_queue.batch
+  title: My queue batch
+  description: 'Custom Batch API example for adding to title of the date.'
+  parent: system.admin_config_content

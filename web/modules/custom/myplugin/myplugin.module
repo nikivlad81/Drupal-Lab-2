@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * @file
+ * MyModule module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function myplugin_theme($existing, $type, $theme, $path) {
+  return [
+    'describe_latest_node' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * {@inheritdoc}
+ */
+function template_preprocess_describe_latest_node(&$variables) {
+
+  $service = Drupal::service('myplygin.describeLatestNode');
+  $config = Drupal::service('config.factory');
+  $config = $config->get('myplugin.settings');
+  $nodes = $service->doLoadNodes();
+
+  $k = 0;
+  foreach ($nodes as $node) {
+
+    $type = $node->type->getString();
+    if ($type == 'color') {
+      $variables['describe_latest_node'] = $service->describeColors();
+      break;
+    }
+
+    $type == 'blog' ? $iid = $node->field_image_hw->getString() : $iid = stristr($node->field_image->getString(), ',', TRUE);
+
+    if (strlen($iid) < 1) {
+      $iid = 16;
+    }
+    $k++;
+    if ($k > $config->get('count')) {
+      break;
+    }
+
+    $file = \Drupal::entityTypeManager()
+      ->getStorage('file')
+      ->load($iid);
+
+    $path = substr($file->uri->value, 9);
+
+    if (mb_strlen($node->getTitle()) > 20) {
+      $title = mb_substr($node->getTitle(), 0, 16) . '...';
+    }
+    else {
+      $title = $node->getTitle();
+    }
+
+    if ($type == 'blog' or $iid == 16) {
+      $pre_path = '/sites/default/files/styles/large/public/';
+    }
+    else {
+      $pre_path = '/sites/default/files/styles/wide/public/';
+    }
+
+    $view = t('<a href="/node/@node"><span>@title</span></a><br>
+        <img src="@pre_path@path">', [
+          '@node' => $node->id(),
+          '@title' => $title,
+          '@pre_path' => $pre_path,
+          '@path' => $path,
+        ]);
+
+    $titles[] = [
+      '#markup' => $view,
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => 'content_latest_node',
+      ],
+      '#suffix' => '<br>',
+    ];
+
+  }
+  if ($type != 'color') {
+    $variables['describe_latest_node'] = $titles;
+  }
+
+  $variables['#attached']['library'][] = 'myplugin/describe_latest_node';
+}

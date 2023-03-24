@@ -1,0 +1,18 @@
+uuid: 24d17058-06fc-4b0f-a47f-3bb5bcd289d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags_hw
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tags_hw
+target_entity_type_id: taxonomy_term
+target_bundle: tags_hw
+default_langcode: site_default
+language_alterable: true

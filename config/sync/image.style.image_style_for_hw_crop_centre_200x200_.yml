@@ -1,0 +1,15 @@
+uuid: 67add213-92c1-4b9d-a646-08d0b3af7aed
+langcode: en
+status: true
+dependencies: {  }
+name: image_style_for_hw_crop_centre_200x200_
+label: 'Image style for HW crop centre (200x200)'
+effects:
+  e152787e-be72-47d9-89b7-55f101175a53:
+    uuid: e152787e-be72-47d9-89b7-55f101175a53
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

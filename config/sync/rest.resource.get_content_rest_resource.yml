@@ -1,0 +1,20 @@
+uuid: d1d662c4-3432-4455-a78b-867e421cb112
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - myrestapi
+    - serialization
+    - user
+id: get_content_rest_resource
+plugin_id: get_content_rest_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

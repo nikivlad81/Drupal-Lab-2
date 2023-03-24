@@ -1,0 +1,18 @@
+uuid: e11d0d4f-07ea-43f0-b061-d8dee6286ff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brochure_block
+id: block_content.brochure_block.info
+field_name: info
+entity_type: block_content
+bundle: brochure_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

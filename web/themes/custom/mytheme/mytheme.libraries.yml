@@ -1,0 +1,23 @@
+common:
+  version: 1.x
+  css:
+    theme:
+      css/custom.css: {}
+  js:
+    js/common.js: {}
+  dependencies:
+    - core/jquery
+
+masonry:
+  version: 1.x
+  js:
+    https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js: {type: external, minified: true }
+    js/masonry.js: {}
+  dependencies:
+    - core/jquery
+
+custom:
+  version: 1.x
+  css:
+    theme:
+      css/blogs.css: { }

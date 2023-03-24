@@ -1,0 +1,5 @@
+name: Student
+description: Description of new custom entity Student.
+package: Custom
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10

@@ -1,0 +1,29 @@
+uuid: 3aa7e875-dde9-4042-be15-69f6189051f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.random_blog
+  module:
+    - system
+    - views
+  theme:
+    - mytheme
+id: views_block__random_blog_block_1
+theme: mytheme
+region: sidebar_top
+weight: 0
+provider: null
+plugin: 'views_block:random_blog-block_1'
+settings:
+  id: 'views_block:random_blog-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /blogs

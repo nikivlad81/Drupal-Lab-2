@@ -1,0 +1,20 @@
+uuid: f4e4ff04-17bf-41a8-a504-b581dfb02f32
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - myrestapi
+    - serialization
+    - user
+id: patch_content_rest_resource
+plugin_id: patch_content_rest_resource
+granularity: resource
+configuration:
+  methods:
+    - PATCH
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

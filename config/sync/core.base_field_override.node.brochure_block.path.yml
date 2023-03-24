@@ -1,0 +1,20 @@
+uuid: 4c3b5bae-a76d-419c-a858-02df45ae71b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.brochure_block
+  module:
+    - path
+id: node.brochure_block.path
+field_name: path
+entity_type: node
+bundle: brochure_block
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

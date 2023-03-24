@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Student registration module file.
+ */
+
+/**
+ * {@inheritdoc}
+ */
+function student_registration_preprocess_page(&$variables) {
+
+}

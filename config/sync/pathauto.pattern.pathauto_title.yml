@@ -1,0 +1,25 @@
+uuid: 771f3591-d16b-46b5-8ec2-a66a2248a84b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pathauto_title
+label: 'pathauto title'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  bee76a97-54a2-40fb-bb03-6c0214288077:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: bee76a97-54a2-40fb-bb03-6c0214288077
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      blog: blog
+      color: color
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

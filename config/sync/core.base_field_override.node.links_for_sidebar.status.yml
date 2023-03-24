@@ -1,0 +1,22 @@
+uuid: 16d581f7-557f-47d9-b3d4-bc46d0027a6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+id: node.links_for_sidebar.status
+field_name: status
+entity_type: node
+bundle: links_for_sidebar
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

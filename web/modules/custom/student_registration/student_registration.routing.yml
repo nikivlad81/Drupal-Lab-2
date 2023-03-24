@@ -1,0 +1,35 @@
+student_registration.form:
+  path: '/student-registrations'
+  defaults:
+    _form: '\Drupal\student_registration\Form\RegistrationForm'
+  requirements:
+    _permission: 'access content'
+
+student_registration.profile:
+  path: '/student-registration/{id}'
+  defaults:
+    _controller: '\Drupal\student_registration\Controller\StudentRegistrationController::content'
+  requirements:
+    _permission: 'access content'
+
+student_registration.content.terms:
+  path: '/student-registration'
+  defaults:
+    _controller: '\Drupal\student_registration\Controller\StudentRegistrationController::index'
+    _title: 'Students list'
+  requirements:
+    _permission: 'access content'
+
+student_registration.delete:
+  path: '/student-registration/{name}/delete'
+  defaults:
+    _form: '\Drupal\student_registration\Form\DeleteStudentForm'
+  requirements:
+    _permission: 'access content'
+
+student_registration.edit:
+  path: '/student-registration/{name}/edit'
+  defaults:
+    _form: '\Drupal\student_registration\Form\EditForm'
+  requirements:
+    _permission: 'access content'

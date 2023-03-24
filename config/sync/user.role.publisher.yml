@@ -1,0 +1,32 @@
+uuid: 3e8f1ad9-cf2a-4b13-a731-43f0b443c460
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.blog
+    - rest.resource.patch_content_rest_resource
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - content_translation
+    - node
+    - rest
+    - toolbar
+id: publisher
+label: Publisher
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'edit any article content'
+  - 'edit any blog content'
+  - 'restful patch patch_content_rest_resource'
+  - 'translate blog node'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view blog revisions'
+  - 'view latest version'

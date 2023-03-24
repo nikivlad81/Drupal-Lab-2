@@ -1,0 +1,30 @@
+uuid: f145862b-decf-4c1e-88fc-f9f24cc53f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.color.body
+    - field.field.node.color.field_c
+    - node.type.color
+  module:
+    - color_hw
+    - user
+id: node.color.default
+targetEntityType: node
+bundle: color
+mode: default
+content:
+  field_c:
+    type: color_hw_default_formatter
+    label: above
+    settings:
+      width: '250'
+      height: '250'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

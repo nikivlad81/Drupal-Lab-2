@@ -1,0 +1,35 @@
+.describe_latest_node {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  align-content: space-between;
+}
+
+.content_latest_node {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.describe_latest_node img {
+  height: 200px;
+  width: 300px;
+}
+
+.describe_latest_node a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.color_latest_node {
+  margin-left: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  min-width: 300px;
+}
+
+.color_latest_node a {
+  color: white;
+}

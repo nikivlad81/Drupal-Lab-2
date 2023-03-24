@@ -1,0 +1,48 @@
+uuid: db622031-b242-4293-9253-aff7bf114931
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.links_for_sidebar.body
+    - field.field.node.links_for_sidebar.field_links_for_sidebar
+    - node.type.links_for_sidebar
+  module:
+    - link
+id: node.links_for_sidebar.default
+targetEntityType: node
+bundle: links_for_sidebar
+mode: default
+content:
+  field_links_for_sidebar:
+    type: link_default
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

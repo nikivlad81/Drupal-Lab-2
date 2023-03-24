@@ -1,0 +1,57 @@
+uuid: c3f126aa-418c-4fa1-9f75-1f3bb097b6e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.color.body
+    - field.field.node.color.field_c
+    - node.type.color
+  module:
+    - color_hw
+id: node.color.default
+targetEntityType: node
+bundle: color
+mode: default
+content:
+  field_c:
+    type: color_hw_default_widget
+    weight: 1
+    region: content
+    settings:
+      size: 20
+      maxlength: 3
+      placeholder: 'Enter color numbers'
+      min: 0
+      max: 255
+      required: true
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

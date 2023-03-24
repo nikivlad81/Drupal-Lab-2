@@ -1,0 +1,10 @@
+myplugin.settings:
+  type: config_object
+  label: 'MyPlugin Config'
+  mapping:
+    count:
+      type: integer
+      label: 'Count nodes'
+    type:
+      type: string
+      label: 'Nodes type'

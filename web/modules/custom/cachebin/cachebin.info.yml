@@ -1,0 +1,5 @@
+name: Cache Bin
+description: Custom Block For Cache Bin
+package: Custom
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10

@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * MyModule module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mymodule_theme($existing, $type, $theme, $path) {
+  return [
+    'latest_nodes_service' => [
+      'variables' => ['nodes' => NULL],
+    ],
+    'latest_nodes_controller' => [
+      'variables' => ['nodes' => NULL],
+    ],
+  ];
+}
+
+/**
+ * {@inheritdoc}
+ */
+function mymodule_preprocess_page(&$variables) {
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if ($route_name == 'mymodule.nodes-servise' or 'mymodule.nodes-hook') {
+    $variables['#attached']['library'][] = 'mymodule/latest_nodes_controller';
+  }
+
+  $role = 'anonymous';
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+  if ($roles[0] == 'anonymous') {
+    $result = 'You are not registred. Login or register.';
+  }
+  else {
+    $role = ucfirst(strtolower($roles[1]));
+    $result = 'Your current role is ' . $role;
+  }
+
+  $variables['page']['footer_top']['$role'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ["$role"],
+    ],
+  ];
+  $variables['page']['footer_top']['$role']['title'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'p',
+    '#attributes' => [
+      'class' => ['role__title'],
+    ],
+    "#value" => "$result",
+    '#cache' => [
+      'contexts' => ['user.roles'],
+      'max-age' => 300,
+    ],
+  ];
+
+}

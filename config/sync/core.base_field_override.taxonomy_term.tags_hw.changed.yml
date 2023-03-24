@@ -1,0 +1,18 @@
+uuid: acce55a1-3274-417b-9715-cea27fab2308
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags_hw
+id: taxonomy_term.tags_hw.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: tags_hw
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

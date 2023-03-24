@@ -1,0 +1,32 @@
+uuid: fc22e17f-b877-4d39-bdfa-e705588aadba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.brochure_block.body
+    - node.type.brochure_block
+  module:
+    - text
+    - user
+id: node.brochure_block.teaser
+targetEntityType: node
+bundle: brochure_block
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,38 @@
+uuid: 154df822-fe91-412a-98c8-b0ead2e4479f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.blog
+    - node.type.color
+    - rest.resource.post_content_rest_resource
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - content_translation
+    - media
+    - node
+    - rest
+    - toolbar
+id: editor
+label: Editor
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create article content'
+  - 'create blog content'
+  - 'create color content'
+  - 'create content translations'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own color content'
+  - 'restful post post_content_rest_resource'
+  - 'translate article node'
+  - 'translate blog node'
+  - 'translate color node'
+  - 'use editorial transition create_new_draft'
+  - 'view own unpublished content'
+  - 'view own unpublished media'

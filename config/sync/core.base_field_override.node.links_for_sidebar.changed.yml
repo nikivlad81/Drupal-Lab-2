@@ -1,0 +1,18 @@
+uuid: 652fb23c-82fc-4fcf-8c64-fb768a43de4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+id: node.links_for_sidebar.changed
+field_name: changed
+entity_type: node
+bundle: links_for_sidebar
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,6 @@
+name: My plugin
+description: Description of my plugin.
+package: Custom
+type: module
+configure: myplugin.settings
+core_version_requirement: ^8.8.0 || ^9 || ^10

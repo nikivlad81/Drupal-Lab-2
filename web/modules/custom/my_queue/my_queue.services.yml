@@ -1,0 +1,8 @@
+services:
+  logger.channel.my_queue_log:
+    parent: logger.channel_base
+    arguments: [ 'my_queue_log' ]
+
+  my_queue.mail_handler:
+    class: Drupal\my_queue\Mail\MailHandler
+    arguments: [ '@plugin.manager.mail', '@language_manager', '@language.default', '@string_translation' ]

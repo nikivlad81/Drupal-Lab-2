@@ -1,0 +1,18 @@
+uuid: b2b76fbf-d08b-4971-8235-ab0a64e32ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.brochure_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.brochure_block
+target_entity_type_id: node
+target_bundle: brochure_block
+default_langcode: site_default
+language_alterable: true

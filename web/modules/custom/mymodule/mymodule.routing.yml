@@ -1,0 +1,34 @@
+mymodule.first:
+  path: '/hw-module/route1/{name}/{email}/{age}'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\HWModuleController::content'
+  requirements:
+    _permission: 'access content'
+
+mymodule.form:
+  path: '/hw-module/form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\MyHWMForm'
+  requirements:
+    _permission: 'access content'
+
+mymodule.connect:
+  path: '/hw-module/connect-to-db'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\HWConnectToDBController::content'
+  requirements:
+    _permission: 'access content'
+
+mymodule.nodes-servise:
+  path: '/hw-module/latest-nodes-service'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\LatestNodesController::service'
+  requirements:
+    _permission: 'access content'
+
+mymodule.nodes-hook:
+  path: '/hw-module/latest-nodes-controller'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\LatestNodesController::latestNodesController'
+  requirements:
+    _permission: 'access content'

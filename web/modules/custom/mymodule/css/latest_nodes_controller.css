@@ -1,0 +1,23 @@
+.latest_nodes_controller {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  align-content: space-between;
+}
+
+.content_latest_node {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.latest_nodes_controller img {
+  height: 200px;
+  width: 300px;
+}
+
+.latest_nodes_controller a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 2.25rem;
+}

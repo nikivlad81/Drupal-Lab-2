@@ -1,0 +1,18 @@
+uuid: 25018bac-dc1c-40d4-b170-9dfa612cf5a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags_hw
+id: taxonomy_term.tags_hw.name
+field_name: name
+entity_type: taxonomy_term
+bundle: tags_hw
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

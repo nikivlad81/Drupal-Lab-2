@@ -1,0 +1,5 @@
+describe_latest_node:
+  version: 1.x
+  css:
+    theme:
+      css/describe_latest_node.css: { }

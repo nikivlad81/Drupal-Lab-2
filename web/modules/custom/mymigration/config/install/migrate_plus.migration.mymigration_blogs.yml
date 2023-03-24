@@ -1,0 +1,52 @@
+id: mymigration_blogs
+label: 'Migrate blogs nodes from CSV file'
+description: Migrate blogs nodes from CSV file.
+source_type: CSV
+migration_tags:
+  - CSV
+  - content
+  - blog
+source:
+  plugin: csv
+  path: modules/custom/mymigration/assets/newblogs.csv
+  track_changes: true
+  delimiter: ';'
+  ids: [id]
+process:
+  title: title
+  body: text
+  path: url
+  field_tags_hw:
+    -
+      plugin: explode
+      source: tags
+      delimiter: ','
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle: tags_hw
+      property: name
+
+  field_category:
+    -
+      plugin: entity_generate
+      source: category
+      entity_type: taxonomy_term
+      bundle: category
+      value_key: name
+      bundle_key: vid
+
+  uid:
+    -
+      plugin: default_value
+      default_value: 2
+  status:
+    - plugin: default_value
+      default_value: 0
+  type:
+    - plugin: default_value
+      default_value: blog
+
+destination:
+  plugin: entity:node
+migration_dependencies: {}

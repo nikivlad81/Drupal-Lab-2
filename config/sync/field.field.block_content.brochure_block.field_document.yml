@@ -1,0 +1,29 @@
+uuid: 14612ea3-6428-45f1-a6da-9201adde7ed7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brochure_block
+    - field.storage.block_content.field_document
+    - media.type.document
+id: block_content.brochure_block.field_document
+field_name: field_document
+entity_type: block_content
+bundle: brochure_block
+label: Document
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

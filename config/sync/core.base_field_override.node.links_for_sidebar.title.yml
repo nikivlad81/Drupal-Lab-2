@@ -1,0 +1,18 @@
+uuid: cdca39a6-65ea-4cd1-96fc-5edebbf56ed5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+id: node.links_for_sidebar.title
+field_name: title
+entity_type: node
+bundle: links_for_sidebar
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

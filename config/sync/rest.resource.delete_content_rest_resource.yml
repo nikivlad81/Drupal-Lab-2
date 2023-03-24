@@ -1,0 +1,20 @@
+uuid: f940d404-c9db-420a-b2cd-9b3d6897906a
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - myrestapi
+    - serialization
+    - user
+id: delete_content_rest_resource
+plugin_id: delete_content_rest_resource
+granularity: resource
+configuration:
+  methods:
+    - DELETE
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

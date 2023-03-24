@@ -1,0 +1,5 @@
+name: Ajax Form Demo
+type: module
+description: Module for implementing custom form ajax.
+core_version_requirement: ^8.8 || ^9
+package: Custom

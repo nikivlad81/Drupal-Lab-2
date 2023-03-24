@@ -1,0 +1,8 @@
+name: My Migration API
+description: Description of my Migration API, migrate from CSV file to nodes.
+package: Custom
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10
+config_devel:
+  install:
+    - migrate_plus.migration.mymigration_blogs

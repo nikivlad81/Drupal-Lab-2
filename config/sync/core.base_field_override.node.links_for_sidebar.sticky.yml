@@ -1,0 +1,22 @@
+uuid: 2bef2d6a-db79-47b0-b69a-de4e4084d933
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+id: node.links_for_sidebar.sticky
+field_name: sticky
+entity_type: node
+bundle: links_for_sidebar
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

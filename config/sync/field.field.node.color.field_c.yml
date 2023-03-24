@@ -1,0 +1,21 @@
+uuid: 806b6260-c8b8-4e0f-bded-7bb8fc291d1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_c
+    - node.type.color
+  module:
+    - color_hw
+id: node.color.field_c
+field_name: field_c
+entity_type: node
+bundle: color
+label: 'Color RGB'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: color_hw

@@ -1,0 +1,7 @@
+name: My module
+description: Description of my module.
+package: Custom
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10
+'interface translation project': my_module
+'interface translation server pattern': modules/custom/mymodule/translations/mymodule.russian.po

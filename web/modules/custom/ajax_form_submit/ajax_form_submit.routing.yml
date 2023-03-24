@@ -1,0 +1,22 @@
+ajax_form_submit.ajax_submit_demo:
+  path: '/ajax-form-submit'
+  defaults:
+    _form:  '\Drupal\ajax_form_submit\Form\AjaxSubmitDemo'
+    _title: 'Ajax Submit Form'
+  requirements:
+    _permission: 'access content'
+
+ajax_form_submit.multistep_ajax_form:
+  path: '/multistep-ajax-form'
+  defaults:
+    _form:  '\Drupal\ajax_form_submit\Form\MultistepAjaxForm'
+    _title: 'Multistep Ajax Form'
+  requirements:
+    _permission: 'access content'
+
+ajax_form_submit.success:
+  path: '/multistep-ajax-form/{name}/{surname}/{age}/{gender}/{bio}/{hobby}'
+  defaults:
+    _controller: '\Drupal\ajax_form_submit\Controller\SuccessAjaxFormController::content'
+  requirements:
+    _permission: 'access content'

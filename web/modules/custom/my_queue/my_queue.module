@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * @file
+ * My Queue module file.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Access\AccessResult;
+
+/**
+ * Implements hook_node_update().
+ */
+function my_queue_node_update(NodeInterface $node) {
+
+  $data = [
+    'user' => Drupal::currentUser()->getAccountName(),
+    'uid' => Drupal::currentUser()->id(),
+    'type' => $node->getType(),
+    'nid' => $node->id(),
+    'op' => 'edit',
+    'timestamp' => Drupal::time()->getCurrentTime(),
+  ];
+
+  Drupal::queue('my_queue_log')->createItem($data);
+  AccessResult::neutral();
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function my_queue_node_access_records(NodeInterface $node) {
+
+  if ($node->status->value == FALSE) {
+    return;
+  }
+
+  $data = [
+    'user' => Drupal::currentUser()->getAccountName(),
+    'uid' => Drupal::currentUser()->id(),
+    'type' => $node->getType(),
+    'nid' => $node->id(),
+    'op' => 'create',
+    'timestamp' => Drupal::time()->getCurrentTime(),
+  ];
+
+  Drupal::queue('my_queue_log')->createItem($data);
+
+  $mail = [
+    'title' => $node->getTitle(),
+    'type' => $node->getType(),
+    'nid' => $node->id(),
+  ];
+
+  Drupal::queue('my_queue_mailhog')->createItem($mail);
+  AccessResult::neutral();
+
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function my_queue_node_delete(NodeInterface $node) {
+
+  $data = [
+    'user' => Drupal::currentUser()->getAccountName(),
+    'uid' => Drupal::currentUser()->id(),
+    'type' => $node->getType(),
+    'nid' => $node->id(),
+    'op' => 'delete',
+    'timestamp' => Drupal::time()->getCurrentTime(),
+  ];
+
+  Drupal::queue('my_queue_log')->createItem($data);
+  AccessResult::neutral();
+
+}
+
+/**
+ * Implements hook_mail().
+ *
+ * @see \Drupal\my_queue\Mail\MailHandler
+ */
+function my_queue_mail(string $key, array &$message, array $params): void {
+  /** @var \Drupal\Core\Render\RendererInterface $renderer */
+  $renderer = \Drupal::service('renderer');
+
+  if (isset($params['headers'])) {
+    $message['headers'] = array_merge($message['headers'], $params['headers']);
+  }
+  if (!empty($params['from'])) {
+    $message['from'] = $params['from'];
+  }
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $renderer->renderPlain($params['body']);
+}

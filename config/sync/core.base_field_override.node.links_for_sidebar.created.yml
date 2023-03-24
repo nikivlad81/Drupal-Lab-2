@@ -1,0 +1,18 @@
+uuid: 2e6503b9-5304-4438-9e43-213aca2f16e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+id: node.links_for_sidebar.created
+field_name: created
+entity_type: node
+bundle: links_for_sidebar
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

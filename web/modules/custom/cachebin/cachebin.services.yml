@@ -1,0 +1,7 @@
+services:
+  cache.cache_bin_asus:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: ['@cache_factory', 'get']
+    arguments: [cache_bin_asus]

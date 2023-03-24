@@ -1,0 +1,5 @@
+latest_nodes_controller:
+  version: 1.x
+  css:
+    theme:
+      css/latest_nodes_controller.css: { }

@@ -1,0 +1,37 @@
+uuid: 6232170c-7fbe-43fe-9299-77f47f5e969b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.links_for_sidebar.body
+    - field.field.node.links_for_sidebar.field_links_for_sidebar
+    - node.type.links_for_sidebar
+  module:
+    - link
+    - user
+id: node.links_for_sidebar.default
+targetEntityType: node
+bundle: links_for_sidebar
+mode: default
+content:
+  field_links_for_sidebar:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true
+  search_api_excerpt: true

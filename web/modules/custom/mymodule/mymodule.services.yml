@@ -1,0 +1,8 @@
+services:
+  mymodule.latestNodesService:
+    class: Drupal\mymodule\LatestNodesService
+    arguments: ['@entity_type.manager']
+  redirect_subscriber_home_work:
+    class: Drupal\mymodule\EventSubscriberHW
+    tags:
+      - { name: event_subscriber }

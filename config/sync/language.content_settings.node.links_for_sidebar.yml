@@ -1,0 +1,18 @@
+uuid: 1ba16494-474c-4169-b3c2-fc8fddb8ac4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.links_for_sidebar
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.links_for_sidebar
+target_entity_type_id: node
+target_bundle: links_for_sidebar
+default_langcode: site_default
+language_alterable: true
